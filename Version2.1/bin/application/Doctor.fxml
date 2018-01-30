@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DoctorController">
+   <children>
+      <SplitPane layoutX="191.0" layoutY="22.0" prefHeight="581.0" prefWidth="2.0" />
+      <SplitPane layoutX="194.0" layoutY="41.0" prefHeight="2.0" prefWidth="979.0" />
+      <SplitPane layoutX="756.0" layoutY="56.0" prefHeight="296.0" prefWidth="2.0" />
+      <SplitPane layoutX="210.0" layoutY="234.0" prefHeight="2.0" prefWidth="524.0" />
+      <Label layoutX="210.0" layoutY="236.0" text="Device Settings">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="768.0" layoutY="57.0" text="History">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="202.0" layoutY="59.0" text="Patient's Profile">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="202.0" layoutY="88.0" text="Name:" />
+      <Label layoutX="503.0" layoutY="106.0" text="Contact No:" />
+      <Label layoutX="503.0" layoutY="75.0" text="ID:" />
+      <Label layoutX="200.0" layoutY="154.0" text="Address:" />
+      <Label layoutX="200.0" layoutY="119.0" text="Age:" />
+      <Label layoutX="201.0" layoutY="186.0" text="Additional Durgs:" />
+      <RadioButton fx:id="ManualMode" layoutX="210.0" layoutY="264.0" mnemonicParsing="false" text="Manual Mode" />
+      <Label layoutX="215.0" layoutY="296.0" text="Next Appointment" />
+      <DatePicker fx:id="dtNextAppointment" layoutX="319.0" layoutY="292.0" prefHeight="25.0" prefWidth="95.0" />
+      <Label layoutX="471.0" layoutY="12.0" text="Device and Patient Configuration">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <SplitPane layoutX="14.0" layoutY="38.0" prefHeight="2.0" prefWidth="165.0" />
+      <Label layoutX="71.0" layoutY="22.0" text="Input">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="768.0" layoutY="82.0" prefHeight="264.0" prefWidth="407.0">
+        <columns>
+          <TableColumn fx:id="phDate" prefWidth="93.0" text="Date" />
+          <TableColumn fx:id="phTime" prefWidth="95.0" text="Time" />
+            <TableColumn fx:id="phGlucoseLevel" prefWidth="199.0" text="Glucose Level" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtpatientName" layoutX="237.0" layoutY="84.0" prefHeight="25.0" prefWidth="189.0" />
+      <TextField fx:id="txtpatientAge" layoutX="237.0" layoutY="115.0" prefHeight="25.0" prefWidth="189.0" />
+      <TextField fx:id="txtpatientContactNo" layoutX="580.0" layoutY="102.0" prefHeight="25.0" prefWidth="138.0" />
+      <TextField fx:id="txtpatientAddress" layoutX="263.0" layoutY="152.0" prefHeight="25.0" prefWidth="454.0" />
+      <TextField fx:id="txtpatientAdditionalDrugs" layoutX="309.0" layoutY="184.0" prefHeight="25.0" prefWidth="407.0" />
+      <ComboBox fx:id="cmbPatientID" layoutX="580.0" layoutY="69.0" onAction="#OnPatientIDSelect" prefHeight="25.0" prefWidth="138.0" />
+      <Button fx:id="btnEnableAddtion" layoutX="341.0" layoutY="326.0" mnemonicParsing="false" onAction="#EnableAddtion" text="New Patient" />
+      <Button fx:id="btnSaveNewPatient" layoutX="510.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnAddNewPatient" text="Save" />
+      <Button layoutX="449.0" layoutY="326.0" mnemonicParsing="false" text="Edit" />
+      <DatePicker fx:id="dtHistoryDate" layoutX="997.0" layoutY="55.0" prefHeight="25.0" prefWidth="138.0" />
+      <Button fx:id="btnGetHistoryByDate" layoutX="1141.0" layoutY="55.0" mnemonicParsing="false" onAction="#GetHistoryByDate" text="Ok" />
+      <LineChart fx:id="HistoryChart" layoutX="211.0" layoutY="365.0" prefHeight="271.0" prefWidth="964.0">
+        <xAxis>
+          <CategoryAxis fx:id="Time" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="GlucoseLevel" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <SplitPane layoutX="210.0" layoutY="358.0" prefHeight="2.0" prefWidth="524.0" />
+      <Text layoutX="213.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please check the drugs interaction at " />
+      <Hyperlink fx:id="hyperlink" layoutX="405.0" layoutY="211.0" text="https://www.drugs.com/drug_interactions.php" />
+   </children>
+</AnchorPane>

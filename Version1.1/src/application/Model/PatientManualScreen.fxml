@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Model.PatientManualController">
+   <children>
+      <Label fx:id="M_modelLabelID" layoutX="14.0" layoutY="14.0" prefHeight="44.0" prefWidth="231.0" text="Manual Mode">
+         <font>
+            <Font name="Times New Roman Italic" size="38.0" />
+         </font>
+      </Label>
+      <Button fx:id="breakfastBtn" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" text="Breakfast">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="lunchBtn" layoutX="14.0" layoutY="165.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="97.0" text="Lunch">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="dinnerBtn" layoutX="14.0" layoutY="236.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="97.0" text="Dinner">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="goDownBtn" layoutX="16.0" layoutY="311.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="96.0" text="Go Down" />
+      <ProgressBar fx:id="pb" layoutX="428.0" layoutY="70.0" prefWidth="200.0" progress="1.0" />
+      <ProgressBar fx:id="pb2_1" layoutX="428.0" layoutY="137.0" prefWidth="200.0" progress="1.0" />
+      <ProgressBar fx:id="pb3_1" layoutX="423.0" layoutY="210.0" prefWidth="200.0" progress="1.0" />
+      <Button fx:id="RI_1" layoutX="428.0" layoutY="99.0" mnemonicParsing="false" onAction="#run" text="Refill Insulin" />
+      <Button fx:id="RG_1" layoutX="427.0" layoutY="172.0" mnemonicParsing="false" text="Refill Glucagon" />
+      <Button fx:id="RB_1" layoutX="428.0" layoutY="243.0" mnemonicParsing="false" text="Recharge Battery" />
+      <Button fx:id="startInsulin_1" layoutX="588.0" layoutY="99.0" mnemonicParsing="false" text="Start" />
+      <Button fx:id="startGlucagon" layoutX="588.0" layoutY="172.0" mnemonicParsing="false" text="Start" />
+      <Button fx:id="rechargeBattery_1" layoutX="595.0" layoutY="243.0" mnemonicParsing="false" text="Start" />
+      <Button fx:id="bglBtn" layoutX="691.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" text="Current BGL" textFill="#2562b2">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="equals_1" layoutX="814.0" layoutY="94.0" text="=" />
+      <Label fx:id="equals_11" layoutX="819.0" layoutY="157.0" text="=" />
+      <TextField fx:id="InputVal" layoutX="138.0" layoutY="414.0" prefHeight="25.0" prefWidth="56.0" promptText="____________" />
+      <Button fx:id="checkLunchInsBtn" layoutX="273.0" layoutY="172.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Check Lunch Ins" />
+      <Button fx:id="checkDinnerInsBtn" layoutX="273.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Check Dinner Ins" />
+      <Button fx:id="sensorONBtn" layoutX="818.0" layoutY="14.0" mnemonicParsing="false" onAction="#sensorON" prefHeight="25.0" prefWidth="80.0" text="Sensor ON" textFill="#202da1">
+         <effect>
+            <ColorAdjust brightness="-0.29" contrast="0.1" hue="-0.09" saturation="0.12">
+               <input>
+                  <DropShadow />
+               </input>
+            </ColorAdjust>
+         </effect>
+      </Button>
+      <Button fx:id="sensorOFFBtn" layoutX="819.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Sensor OFF" textFill="#202da1">
+         <effect>
+            <ColorAdjust brightness="-0.29" contrast="0.1" hue="-0.09" saturation="0.12">
+               <input>
+                  <DropShadow />
+               </input>
+            </ColorAdjust>
+         </effect>
+      </Button>
+      <Label fx:id="bglVal" layoutX="834.0" layoutY="90.0" prefHeight="25.0" prefWidth="88.0" textFill="#2992b5" />
+      <Label layoutX="698.0" layoutY="153.0" prefHeight="25.0" prefWidth="107.0" text="Required Insulin" textFill="#2474a6">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="reqIns" layoutX="838.0" layoutY="146.0" prefHeight="25.0" prefWidth="80.0" textFill="#2992b5" />
+      <Button fx:id="checkBFInsBtn" layoutX="273.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Check BF Ins" />
+      <Button fx:id="inputCarbs" layoutX="16.0" layoutY="411.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" text="Extra Input Carbs" />
+      <LineChart fx:id="lineChart" createSymbols="false" layoutX="326.0" layoutY="320.0" prefHeight="240.0" prefWidth="953.0" title="Glucose Chart" verticalGridLinesVisible="false">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <SplitPane layoutX="370.0" layoutY="401.0" prefHeight="2.0" prefWidth="900.0" />
+      <TextField fx:id="BFText" layoutX="124.0" layoutY="97.0" prefHeight="30.0" prefWidth="70.0" promptText="___________" />
+      <TextField fx:id="DinnerText" layoutX="124.0" layoutY="241.0" prefHeight="30.0" prefWidth="70.0" promptText="____________" />
+      <TextField fx:id="LunchText" layoutX="124.0" layoutY="170.0" prefHeight="30.0" prefWidth="70.0" promptText="___________" />
+      <TextField fx:id="physicalText" layoutX="124.0" layoutY="316.0" prefHeight="30.0" prefWidth="70.0" />
+      <SplitPane dividerPositions="0.5" layoutX="244.0" layoutY="56.0" orientation="VERTICAL" prefHeight="549.0" prefWidth="2.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="17.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="245.0" layoutY="302.0" prefHeight="2.0" prefWidth="702.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" layoutX="662.0" layoutY="55.0" orientation="VERTICAL" prefHeight="247.0" prefWidth="2.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="244.0" layoutY="56.0" prefHeight="2.0" prefWidth="419.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="290.0" />
+        </items>
+      </SplitPane>
+      <Label layoutX="201.0" layoutY="99.0" prefHeight="25.0" prefWidth="41.0" text="grams" />
+      <Label layoutX="201.0" layoutY="172.0" prefHeight="25.0" prefWidth="41.0" text="grams" />
+      <Label layoutX="201.0" layoutY="243.0" prefHeight="25.0" prefWidth="41.0" text="grams" />
+      <Label layoutX="201.0" layoutY="414.0" prefHeight="25.0" prefWidth="41.0" text="grams" />
+   </children>
+</AnchorPane>
